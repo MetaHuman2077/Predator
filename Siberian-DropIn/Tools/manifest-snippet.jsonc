@@ -1,0 +1,16 @@
+// Задача 1: добавить в Packages/manifest.json проекта Siberian (в блок "dependencies").
+// Пакет MCP For Unity (CoplayDev). После добавления Unity сам подтянет пакет,
+// а Assets/Editor/McpAutoStartBootstrap.cs поднимет мост на 127.0.0.1:8080/mcp.
+//
+// Вариант A — git-URL (основной):
+{
+  "dependencies": {
+    "com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/UnityMcpBridge"
+  }
+}
+// Вариант B — если структура пакета в репозитории изменилась, добавить через
+// Package Manager: "+" -> Add package from git URL -> https://github.com/CoplayDev/unity-mcp.git
+// (Package Manager сам покажет корректный path, если пакет переехал).
+//
+// Подключение Claude Code к мосту (на машине с редактором):
+//   claude mcp add unity --transport http http://127.0.0.1:8080/mcp
